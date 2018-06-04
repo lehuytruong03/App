@@ -114,5 +114,13 @@
         android:layout_marginTop="65dp"
         app:srcCompat="@drawable/cd" />
 
+    <Button
+        android:id="@+id/ButtonDS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/TextTitle"
+        android:text="DS" />
+
 
 </RelativeLayout>

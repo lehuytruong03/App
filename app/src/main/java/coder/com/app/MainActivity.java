@@ -1,5 +1,6 @@
 package coder.com.app;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.SeekBar;
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     SeekBar SKBar;
     ImageView imghinh;
     ImageButton btnNext1, btnPlay, btnStop, btnNext2;
+    Button btnds;
 
     ArrayList<song> arraysong;
     int position = 0;
@@ -36,6 +39,16 @@ public class MainActivity extends AppCompatActivity {
         Addnhac();
         animation = AnimationUtils.loadAnimation(this, R.anim.dis_rotate);
         khoitaoMediaPlayer();
+
+        btnds.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String tile = txtTitle.getText().toString();
+
+                Intent intent= new Intent(MainActivity.this, MainActivity_ds.class);
+                startActivity(intent);
+            }
+        });
 
         btnNext1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -175,12 +188,13 @@ public class MainActivity extends AppCompatActivity {
         txtview     = (TextView) findViewById(R.id.Textview);
         txtTitle    = (TextView) findViewById(R.id.TextTitle);
         txtview2    = (TextView) findViewById(R.id.Textview2);
-        SKBar     = (SeekBar) findViewById(R.id.SeekBar);
+        SKBar       = (SeekBar) findViewById(R.id.SeekBar);
         btnNext1    = (ImageButton) findViewById(R.id.ButtonNext1);
         btnPlay     = (ImageButton) findViewById(R.id.ButtonPlay);
         btnStop     = (ImageButton) findViewById(R.id.ButtonStop);
         btnNext2    = (ImageButton) findViewById(R.id.ButtonNext2);
         imghinh     = (ImageView) findViewById(R.id.imageView);
+        btnds       = (Button) findViewById(R.id.ButtonDS);
 
     }
 }
